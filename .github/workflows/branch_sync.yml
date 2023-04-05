@@ -29,9 +29,3 @@ jobs:
       - name: Sync Branches
         run: >-
           echo $GITHUB_REF
-          if [ $GITHUB_REF = 'refs/heads/staging' ]; then
-            git checkout develop && git pull && git merge staging && git push
-          elif [ $GITHUB_REF = 'refs/heads/main' ]; then
-            git checkout develop && git pull && git merge main && git push
-            git checkout staging && git pull && git merge main && git push
-          fi
