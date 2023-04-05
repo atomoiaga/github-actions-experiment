@@ -6,7 +6,7 @@ name: Branch Sync
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: 
+    branches:
       - main
       - staging
 
@@ -28,6 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Sync Branches
         run: >-
+          echo $GITHUB_REF
           if [ $GITHUB_REF = 'refs/heads/staging' ]; then
             git checkout develop && git pull && git merge staging && git push
           elif [ $GITHUB_REF = 'refs/heads/main' ]; then
