@@ -29,7 +29,7 @@ jobs:
       - name: Sync Branches
         run: >-
           if [[ $GITHUB_REF == "refs/heads/staging" ]]; then
-            echo "Staging branch"
+            git checkout develop && git pull && git merge staging && git push
           elif [[ $GITHUB_REF == "refs/heads/main" ]]; then
             echo "Main branch"
           fi
