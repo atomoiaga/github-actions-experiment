@@ -28,4 +28,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Sync Branches
         run: >-
-          echo $GITHUB_REF
+          if [[ $GITHUB_REF == "refs/heads/staging" ]]; then
+            echo "Staging branch"
+          elif [[ $GITHUB_REF == "refs/heads/main" ]]; then
+            echo "Main branch"
+          fi
