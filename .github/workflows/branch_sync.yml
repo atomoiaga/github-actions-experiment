@@ -11,17 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Syncing branches
     steps:
-<<<<<<< HEAD
-      - uses: actions/checkout@v3
-      - run: "echo ⚙️ synching branches"
-      - run: "echo ${{ github.ref_name }}"
-      - run: |
-          if [[ "${{ github.ref_name }}" == "staging" ]]; then
-            git checkout develop && git merge staging && git push origin develop
-            echo "Syncing staging to develop"
-            exit 0;
-          fi
-=======
       - name: Branch Merge
         uses: everlytic/branch-merge@1.1.5
         with:
@@ -30,4 +19,3 @@ jobs:
           target_branch: 'staging'
           commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
 
->>>>>>> main
