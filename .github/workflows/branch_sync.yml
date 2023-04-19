@@ -13,5 +13,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Merge
-      - run: "echo ⚙️ synching branches"
+        run: "echo ⚙️ synching branches"
         
