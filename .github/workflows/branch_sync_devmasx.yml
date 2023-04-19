@@ -20,6 +20,7 @@ jobs:
           from_branch: main
           target_branch: staging
           message: Merge main to staging
+          disable_fastforwards: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Merge staging -> develop
@@ -30,4 +31,5 @@ jobs:
           from_branch: staging
           target_branch: develop
           message: Merge staging to develop
+          disable_fastforwards: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
