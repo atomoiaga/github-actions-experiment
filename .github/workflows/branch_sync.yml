@@ -16,7 +16,7 @@ jobs:
       - run: "echo ${{ github.ref_name }}"
       - run: |
           if [[ "${{ github.ref_name }}" == "staging" ]]; then
-            # git checkout develop && git merge staging && git push origin develop
+            git checkout develop && git merge staging && git push origin develop
             echo "Syncing staging to develop"
             exit 0;
           fi
