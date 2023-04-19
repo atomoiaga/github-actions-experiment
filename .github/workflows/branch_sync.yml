@@ -1,21 +1,23 @@
-name: Sync Back to Develop
+# name: Sync Back to Develop
+# Working script
+# TODO: Add a condition to only run on main branch and staging branch
 
-on:
-  push:
-    branches:
-      - main
-      - staging
+# on:
+#   push:
+#     branches:
+#       - main
+#       - staging
 
-jobs:
-  sync-branches:
-    runs-on: ubuntu-latest
-    name: Syncing branches
-    steps:
-      - name: Branch Merge
-        uses: everlytic/branch-merge@1.1.5
-        with:
-          github_token: ${{ github.token }}
-          source_ref: ${{ github.ref }}
-          target_branch: 'staging'
-          commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
+# jobs:
+#   sync-branches:
+#     runs-on: ubuntu-latest
+#     name: Syncing branches
+#     steps:
+#       - name: Branch Merge
+#         uses: everlytic/branch-merge@1.1.5
+#         with:
+#           github_token: ${{ github.token }}
+#           source_ref: ${{ github.ref }}
+#           target_branch: 'staging'
+#           commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
 
