@@ -1,0 +1,19 @@
+name: Sync Back to Develop 2
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+
+jobs:
+  sync-branches:
+    runs-on: ubuntu-latest
+    name: Syncing branches
+    steps:
+      - name: Sync branches 2
+        uses: TreTuna/sync-branches@1.4.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FROM_BRANCH: "main"
+          TO_BRANCH: "develop"
