@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# new fancy comment
 
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 
