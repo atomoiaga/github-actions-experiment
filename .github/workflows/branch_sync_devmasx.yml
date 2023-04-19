@@ -14,20 +14,20 @@ jobs:
         uses: devmasx/merge-branch@master
         with:
           type: now
-          label_name: 'automerge'
+          label_name: "automerge"
           from_branch: main
           target_branch: staging
           message: Merge main to staging
-          disable_fastforwards: true
+          disable_fastforwards: "true"
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Merge staging -> develop
         uses: devmasx/merge-branch@master
         with:
           type: now
-          label_name: 'automerge'
+          label_name: "automerge"
           from_branch: staging
           target_branch: develop
           message: Merge staging to develop
-          disable_fastforwards: true
+          disable_fastforwards: "true"
           github_token: ${{ secrets.GITHUB_TOKEN }}
