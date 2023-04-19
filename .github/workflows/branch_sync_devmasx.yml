@@ -4,6 +4,8 @@ on:
     branches:
       - "main"
       - "staging"
+  pull_request:
+    types: [labeled]
 jobs:
   sync-branch:
     runs-on: ubuntu-latest
@@ -14,14 +16,18 @@ jobs:
         uses: devmasx/merge-branch@master
         with:
           type: now
+          label_name: 'automerge'
           from_branch: main
           target_branch: staging
+          message: Merge main to staging
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Merge staging -> develop
         uses: devmasx/merge-branch@master
         with:
           type: now
+          label_name: 'automerge'
           from_branch: staging
           target_branch: develop
+          message: Merge staging to develop
           github_token: ${{ secrets.GITHUB_TOKEN }}
