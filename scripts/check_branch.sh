@@ -13,4 +13,4 @@ if [[ "$BRANCH" == "main" ]]; then
   exit 0;
 fi
 
-echo 'Not on staging branch.';
+echo 'Not on staging branch or main.';
