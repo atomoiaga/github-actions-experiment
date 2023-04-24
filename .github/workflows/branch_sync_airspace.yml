@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Merge main -> staging
-        uses: devmasx/merge-branch@master
+        uses: AirspaceTechnologies/merge-branches@1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: "staging"
@@ -19,7 +19,7 @@ jobs:
           commit_message: "Merged branch source into target"
 
       - name: Merge staging -> develop
-        uses: devmasx/merge-branch@master
+        uses: AirspaceTechnologies/merge-branches@1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: "main"
