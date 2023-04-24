@@ -14,14 +14,16 @@ jobs:
         uses: devmasx/merge-branch@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          source_branch: "staging"
-          target_branch: "develop"
+          source_branch: "main"
+          target_branch: "staging"
           commit_message: "Merged branch source into target"
 
       - name: Merge staging -> develop
         uses: devmasx/merge-branch@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          source_branch: "main"
-          target_branch: "staging"
+          source_branch: "staging"
+          target_branch: "develop"
           commit_message: "Merged branch source into target"
+
+
