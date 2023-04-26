@@ -1,0 +1,26 @@
+# ---
+# name: Sync multiple branches
+# on:
+#   push:
+#     branches:
+#       - main
+#       - staging
+# jobs:
+#   sync-branch:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@master
+#       - name: Merge main -> staging
+#         uses: AirspaceTechnologies/merge-branches@1.0
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           source_branch: main
+#           target_branch: staging
+#           commit_message: Merged branch source into target
+#       - name: Merge staging -> develop
+#         uses: AirspaceTechnologies/merge-branches@1.0
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           source_branch: staging
+#           target_branch: develop
+#           commit_message: Merged branch source into target

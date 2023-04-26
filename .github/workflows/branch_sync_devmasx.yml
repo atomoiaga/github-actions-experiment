@@ -1,33 +1,33 @@
-name: Sync multiple branches
-on:
-  push:
-    branches:
-      - "main"
-      - "staging"
-jobs:
-  sync-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
+# name: Sync multiple branches
+# on:
+#   push:
+#     branches:
+#       - "main"
+#       - "staging"
+# jobs:
+#   sync-branch:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@master
 
-      - name: Merge main -> staging
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          label_name: "automerge"
-          from_branch: main
-          target_branch: staging
-          message: Merge main to staging
-          disable_fastforwards: "true"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Merge main -> staging
+#         uses: devmasx/merge-branch@master
+#         with:
+#           type: now
+#           label_name: "automerge"
+#           from_branch: main
+#           target_branch: staging
+#           message: Merge main to staging
+#           disable_fastforwards: "true"
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Merge staging -> develop
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          label_name: "automerge"
-          from_branch: staging
-          target_branch: develop
-          message: Merge staging to develop
-          disable_fastforwards: "true"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Merge staging -> develop
+#         uses: devmasx/merge-branch@master
+#         with:
+#           type: now
+#           label_name: "automerge"
+#           from_branch: staging
+#           target_branch: develop
+#           message: Merge staging to develop
+#           disable_fastforwards: "true"
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
